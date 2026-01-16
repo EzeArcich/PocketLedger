@@ -1,13 +1,2 @@
-PorcketLedger
-
-Creación de auth para Bootstrap
-
-composer require laravel/ui
-php artisan ui bootstrap --auth
-npm install
-npm run dev
-php artisan migrate
-
-### Usuarios de prueba - Correr seeders
-- admin@pocketledger.test / password
-- user@pocketledger.test / password
+# PocketLedger
+PocketLedger is a Laravel 12 demo SaaS for personal expense tracking, built to showcase clean architecture, policies-based authorization, service layers, form requests, and a polished Bootstrap 5 UI with realistic seeded data and modern UX patterns.
