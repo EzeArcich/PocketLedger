@@ -18,8 +18,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss'])
 </head>
 <body>
     <div id="app">
@@ -81,6 +84,20 @@
             @yield('content')
         </main>
     </div>
+
+    @vite(['resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+    
+    @if (session('status'))
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                window.showBsToast(@json(session('status')), 'success');
+            });
+        </script>
+    @endif
+
+    @stack('scripts')
+    
 </body>
 </html>

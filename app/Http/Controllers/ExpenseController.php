@@ -44,7 +44,7 @@ class ExpenseController extends Controller
     {
         $this->expenseService->createExpense($request->validated(), $request->user());
 
-        return redirect()->route('expenses.index')->with('status', 'Gasto creado.');
+        return redirect()->route('expenses.index')->with('status', 'Expense created successfully!');;
     }
 
     public function edit(Expense $expense)
@@ -59,7 +59,7 @@ class ExpenseController extends Controller
     {
         $this->expenseService->updateExpense($expense, $request->validated());
 
-        return redirect()->route('expenses.index')->with('status', 'Gasto actualizado.');
+        return redirect()->route('expenses.index')->with('status', 'Expense updated successfully!');
     }
 
     // public function destroy(Expense $expense)

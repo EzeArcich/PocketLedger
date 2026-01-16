@@ -1,6 +1,6 @@
 import './bootstrap';
 
-window.showBsToast = function (message, variant = 'success') {
+window.showBsToast = function (message, variant = 'danger') {
   const container = document.getElementById('toastContainer');
   if (!container) return;
 

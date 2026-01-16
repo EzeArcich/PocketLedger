@@ -131,12 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const data = await res.json();
           if (data?.message) msg = data.message;
         } catch (_) {}
-        window.showBsToast(msg, 'danger');
+        window.showBsToast(msg, 'secondary');
         return;
       }
 
       // ✅ éxito
-      window.showBsToast('Eliminado correctamente', 'success');
+      window.showBsToast('Eliminado correctamente', 'danger');
 
       // opcional: sacás el item del DOM
       // si tu botón está dentro de una fila:
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modal.hide();
     } catch (err) {
-      window.showBsToast('Error de red. Intentá de nuevo.', 'danger');
+      window.showBsToast('Error de red. Intentá de nuevo.', 'secondary');
     } finally {
       confirmBtn.disabled = false;
       deleteUrl = null;
